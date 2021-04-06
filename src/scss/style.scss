@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+$background-blue: #0f4499;
+
+$colors:(
+	#40c152, //green
+	#c183f3, //purple
+	#fb635b, //red
+	#ffe053, //yellow
+	#75c8fb, //blue
+	#ffafaf, //pink
+);
+
 *, *:before, *:after {
 	box-sizing: inherit;
 }
@@ -6,4 +18,77 @@ html {
 }
 body {
 	margin: 0;
+	font-family: 'Lato', sans-serif;
+	background-color: $background-blue;
+	color: #fff;
+	line-height: 1.4rem;
+	letter-spacing: 0.3px;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+p {
+	margin: 0 0 15px;
+}
+h1 {
+	line-height: normal;
+}
+h2 {
+	margin: 0;
+	font-size: 1.7rem;
+	line-height: 1.7rem;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+}
+
+.lyrics,
+.info {
+	overflow: scroll;
+	padding: 15px;
+}
+
+.lyrics {
+	flex: 3;
+
+	span {
+		font-weight: bold;
+
+		@each $colour in $colors {
+			$i: index($colors, $colour)-1;
+			&:nth-of-type(#{length($colors)}n + #{$i}) {
+				color: $colour;
+			}
+		}
+
+		&.active {
+			text-shadow: 0 0 4px;
+		}
+	}
+}
+.info {
+	background-color: #fff;
+	color: $background-blue;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	flex: 1;
+
+	.title-wrap {
+		display: flex;
+		align-items: center;
+		padding-bottom: 10px;
+		justify-content: space-between;
+
+		h2 {
+			flex: 1;
+		}
+	}
+
+	img {
+		height: 40px;
+		float: left;
+		margin-left: 6px;
+	}
 }

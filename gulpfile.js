@@ -7,7 +7,7 @@ const babel  = require('gulp-babel');
 gulp.task('styles', ()=> {
 	return gulp.src('src/scss/**/*.scss')
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-		.pipe(concat('styles.min.css'))
+		.pipe(concat('styles.css'))
 		.pipe(gulp.dest('.'))
 });
 
@@ -21,7 +21,7 @@ gulp.task('scripts', ()=> {
 		.pipe(babel({presets: ['@babel/env']}))
 		.pipe(uglify())
 		.on('error', createErrorHandler('uglify'))
-		.pipe(concat('scripts.min.js'))
+		.pipe(concat('scripts.js'))
 		.on('error', createErrorHandler('concat'))
 		.pipe(gulp.dest('.'));
 });

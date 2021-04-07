@@ -13,6 +13,10 @@ var app = new Vue({
 	methods: {
 		getNationInfo(name) {
 			this.currentNation = this.nationInfo[name];
+			this.$refs.info.scrollTop = 0;
+		},
+		clearNationInfo() {
+			this.currentNation = false;
 		},
 		getWindowHeight(event) {
 			this.windowHeight = window.innerHeight + 'px';

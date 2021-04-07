@@ -14,93 +14,77 @@
 	</head>
 	<body>
 		<div id="app" :style="{ height: windowHeight }">
-			<div class="lyrics">
+			<div class="lyrics" :class="{'info-open' : currentNation}" @click="clearNationInfo">
 				<h1>Yakko's world</h1>
 
-				<i>And now, the nations of the world<br>
-				Brought to you by Yakko Warner</i><br>
+				<i>And now, the nations of the world, brought to you by Yakko Warner!</i><br>
 				<br>
 
-				<span @click="getNationInfo('zaire')">United States</span>, <span @click="getNationInfo('zaire')">Canada</span><br>
-				<span @click="getNationInfo('zaire')">Mexico</span>, <span @click="getNationInfo('zaire')">Panama</span><br>
-				<span @click="getNationInfo('zaire')">Haiti</span>, <span @click="getNationInfo('zaire')">Jamaica</span>, <span @click="getNationInfo('zaire')">Peru</span><br>
-				<span @click="getNationInfo('zaire')">Republic Dominican</span>, <span @click="getNationInfo('zaire')">Cuba</span>, <span @click="getNationInfo('zaire')">Carribean</span><br>
-				<span @click="getNationInfo('zaire')">Greenland</span>, <span @click="getNationInfo('zaire')">El Salvador</span> too<br>
+				<span @click.stop="getNationInfo('united_states')">United States</span>, <span @click.stop="getNationInfo('canada')">Canada</span>, <span @click.stop="getNationInfo('mexico')">Mexico</span>, <span @click.stop="getNationInfo('panama')">Panama</span>,<br>
+				<span @click.stop="getNationInfo('haiti')">Haiti</span>, <span @click.stop="getNationInfo('jamaica')">Jamaica</span>, <span @click.stop="getNationInfo('peru')">Peru</span>,<br>
+				<span @click.stop="getNationInfo('dominican_republic')">Republic Dominican</span>, <span @click.stop="getNationInfo('cuba')">Cuba</span>, <span @click.stop="getNationInfo('caribbean')">Caribbean</span>,<br>
+				<span @click.stop="getNationInfo('greenland')">Greenland</span>, <span @click.stop="getNationInfo('el_salvador')">El Salvador</span> too.<br>
 				<br>
-				<span @click="getNationInfo('zaire')">Puerto Rico</span>, <span @click="getNationInfo('zaire')">Colombia</span>, <span @click="getNationInfo('zaire')">Venezuela</span><br>
-				<span @click="getNationInfo('zaire')">Honduras</span>, Guyana, and still<br>
-				Guatemala, Bolivia<br>
-				Then Argentina<br>
-				And Ecuador, Chile, Brazil<br>
+				Puerto Rico, Colombia, Venezuela,<br>
+				Honduras, Guyana, and still,<br>
+				Guatemala, Bolivia, then Argentina,<br>
+				And Ecuador, Chile, Brazil.<br>
 				<br>
-				Costa Rica, Belize, Nicaragua<br>
-				Bermuda, Bahamas, Tobago, San Juan<br>
-				Paraguay, Uruguay, Surinam<br>
-				And French Guiana, Barbados, and Guam<br>
+				Costa Rica, Belize, Nicaragua, Bermuda,<br>
+				Bahamas, Tobago, San Juan,<br>
+				Paraguay, Uruguay, Suriname,<br>
+				And French Guiana, Barbados, and Guam.<br>
 				<br>
-				Norway, and Sweden<br>
-				And Iceland, and Finland<br>
-				And Germany now one piece<br>
-				Switzerland, Austria, Czechoslovakia<br>
-				Italy, Turkey, and Greece<br>
+				Norway, and Sweden, and Iceland, and Finland,<br>
+				And Germany, now in one piece,<br>
+				Switzerland, Austria, Czechoslovakia,<br>
+				Italy, Turkey, and Greece.<br>
 				<br>
-				Poland, Romania<br>
-				Scotland, Albania<br>
-				Ireland, Russia, Oman<br>
-				Bulgaria, Saudi Arabia, Hungary<br>
-				Cyprus, Iraq, and Iran<br>
+				Poland, Romania, Scotland, Albania,<br>
+				Ireland, Russia, Oman,<br>
+				Bulgaria, Saudi Arabia, Hungary,<br>
+				Cyprus, Iraq, and Iran.<br>
 				<br>
-				There's Syria, Lebanon, Israel, Jordan<br>
-				<span @click="getNationInfo('yemen')">Both Yemens</span>, Kuwait, and Bahrain<br>
-				The Netherlands, Luxembourg, Belgium, and Portugal<br>
-				France, England, Denmark, and Spain<br>
+				There's Syria, Lebanon, Israel, Jordan,<br>
+				<span @click.stop="getNationInfo('yemen')">Both Yemens</span>, Kuwait, and Bahrain,<br>
+				The Netherlands, Luxembourg, Belgium, and Portugal,<br>
+				France, England, Denmark, and Spain.<br>
 				<br>
-				India, Pakistan<br>
-				Burma, Afghanistan<br>
-				Thailand, Nepal, and Bhutan<br>
-				Kampuchea, Malaysia<br>
-				Then Bangladesh (Asia)<br>
-				And China, Korea, Japan<br>
+				India, Pakistan, Burma, Afghanistan,<br>
+				Thailand, Nepal, and Bhutan,<br>
+				Kampuchea, Malaysia, then Bangladesh, Asia,<br>
+				And China, Korea, Japan.<br>
 				<br>
-				Mongolia, Laos<br>
-				And Tibet, Indonesia<br>
-				The Philippine Islands, Taiwan<br>
-				Sri Lanka, New Guinea<br>
-				Sumatra, New Zealand<br>
-				Then Borneo, and Vietnam<br>
+				Mongolia, Laos, and Tibet, Indonesia,<br>
+				The Philippine Islands, Taiwan,<br>
+				Sri Lanka, New Guinea, Sumatra, New Zealand,<br>
+				Then Borneo, and Vietnam.<br>
 				<br>
-				Tunisia, Morocco, Uganda, Angola<br>
-				Zimbabwe, Djibouti, Botswana<br>
-				Mozambique, Zambia<br>
-				Swaziland, Gambia<br>
-				Guinea, Algeria, Ghana<br>
+				Tunisia, Morocco, Uganda, Angola,<br>
+				Zimbabwe, Djibouti, Botswana,<br>
+				Mozambique, Zambia, Swaziland, Gambia,<br>
+				Guinea, Algeria, Ghana.<br>
 				<br>
-				Burundi, Lesotho<br>
-				And Malawi, Togo<br>
-				The Spanish Sahara is gone<br>
-				Niger, Nigeria<br>
-				Chad, And Liberia<br>
-				Egypt, Benin, and Gabon<br>
+				Burundi, Lesotho, and Malawi, Togo,<br>
+				The Spanish Sahara is gone,<br>
+				Niger, Nigeria, Chad, and Liberia,<br>
+				Egypt, Benin, and Gabon.<br>
 				<br>
-				Tanzania, Somalia<br>
-				Kenya, and Mali<br>
-				Sierra Leone, and Algiers<br>
-				Dahomey, Namibia<br>
-				Senegal, Libya<br>
-				Cameroon, Congo, <span @click="getNationInfo('zaire')">Zaire</span><br>
+				Tanzania, Somalia, Kenya, and Mali,<br>
+				Sierra Leone, and Algiers,<br>
+				Dahomey, Namibia, Senegal, Libya,<br>
+				Cameroon, <span @click.stop="getNationInfo('congo')">Congo</span>, <span @click.stop="getNationInfo('zaire')">Zaire</span>.<br>
 				<br>
-				Ethiopia, Guinea-Bissau, Madagascar<br>
-				Rwanda, Mahore, And Cayman<br>
-				Hong Kong, Abu Dhabi, Qatar, Yugoslavia<br>
+				Ethiopia, Guinea-Bissau, Madagascar,<br>
+				Rwanda, Maore and Cayman,<br>
+				Hong Kong, Abu Dhabi, Qatar, Yugoslavia...<br>
 				<br>
-				Crete, Mauritania<br>
-				Then Transylviania<br>
-				Monaco, Liechtenstein<br>
-				Malta, and Palestine<br>
-				Fiji, Australia, Sudan<br>
+				Crete, Mauritania, then Transylvania,<br>
+				Monaco, Liechtenstein, Malta, and Palestine,<br>
+				Fiji, Australia, Sudan!<br>
 			</div>
 
-			<div class="info">
+			<div class="info" ref="info" v-if="currentNation">
 				<template v-if="currentNation">
 					<div class="title-wrap">
 						<h2>{{ currentNation.name }}</h2>
@@ -108,7 +92,7 @@
 							<img v-for="flag in currentNation.flags" :src="flag.img" alt="flag.name">
 						</span>
 					</div>
-					<p>{{ currentNation.info }}</p>
+					<p v-html="currentNation.info"></p>
 				</template>
 				<template v-else>
 					Click on a nation name to find out more...

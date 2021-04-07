@@ -14,16 +14,16 @@
 	</head>
 	<body>
 		<div id="app" :style="{ height: windowHeight }">
-			<div class="lyrics" :class="{'info-open' : currentNation}" @click="clearNationInfo">
+			<div class="lyrics" :class="{'info-open' : currentNation}" @click.self="clearNationInfo">
 				<h1>Yakko's world</h1>
 
 				<i>And now, the nations of the world, brought to you by Yakko Warner!</i><br>
 				<br>
 
-				<span @click.stop="getNationInfo('united_states')">United States</span>, <span @click.stop="getNationInfo('canada')">Canada</span>, <span @click.stop="getNationInfo('mexico')">Mexico</span>, <span @click.stop="getNationInfo('panama')">Panama</span>,<br>
-				<span @click.stop="getNationInfo('haiti')">Haiti</span>, <span @click.stop="getNationInfo('jamaica')">Jamaica</span>, <span @click.stop="getNationInfo('peru')">Peru</span>,<br>
-				<span @click.stop="getNationInfo('dominican_republic')">Republic Dominican</span>, <span @click.stop="getNationInfo('cuba')">Cuba</span>, <span @click.stop="getNationInfo('caribbean')">Caribbean</span>,<br>
-				<span @click.stop="getNationInfo('greenland')">Greenland</span>, <span @click.stop="getNationInfo('el_salvador')">El Salvador</span> too.<br>
+				<span @click="getNationInfo('united_states')">United States</span>, <span @click="getNationInfo('canada')">Canada</span>, <span @click="getNationInfo('mexico')">Mexico</span>, <span @click="getNationInfo('panama')">Panama</span>,<br>
+				<span @click="getNationInfo('haiti')">Haiti</span>, <span @click="getNationInfo('jamaica')">Jamaica</span>, <span @click="getNationInfo('peru')">Peru</span>,<br>
+				<span @click="getNationInfo('dominican_republic')">Republic Dominican</span>, <span @click="getNationInfo('cuba')">Cuba</span>, <span @click="getNationInfo('caribbean')">Caribbean</span>,<br>
+				<span @click="getNationInfo('greenland')">Greenland</span>, <span @click="getNationInfo('el_salvador')">El Salvador</span> too.<br>
 				<br>
 				Puerto Rico, Colombia, Venezuela,<br>
 				Honduras, Guyana, and still,<br>
@@ -46,7 +46,7 @@
 				Cyprus, Iraq, and Iran.<br>
 				<br>
 				There's Syria, Lebanon, Israel, Jordan,<br>
-				<span @click.stop="getNationInfo('yemen')">Both Yemens</span>, Kuwait, and Bahrain,<br>
+				<span @click="getNationInfo('yemen')">Both Yemens</span>, Kuwait, and Bahrain,<br>
 				The Netherlands, Luxembourg, Belgium, and Portugal,<br>
 				France, England, Denmark, and Spain.<br>
 				<br>
@@ -73,7 +73,7 @@
 				Tanzania, Somalia, Kenya, and Mali,<br>
 				Sierra Leone, and Algiers,<br>
 				Dahomey, Namibia, Senegal, Libya,<br>
-				Cameroon, <span @click.stop="getNationInfo('congo')">Congo</span>, <span @click.stop="getNationInfo('zaire')">Zaire</span>.<br>
+				Cameroon, <span @click="getNationInfo('congo')">Congo</span>, <span @click="getNationInfo('zaire')">Zaire</span>.<br>
 				<br>
 				Ethiopia, Guinea-Bissau, Madagascar,<br>
 				Rwanda, Maore and Cayman,<br>

@@ -52,7 +52,12 @@ h2 {
 }
 
 .lyrics {
-	flex: 3;
+	flex: 1;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
 	&.info-open {
 		padding-bottom: $info-height + 15px;

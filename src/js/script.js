@@ -13,7 +13,7 @@ var app = new Vue({
 	methods: {
 		getNationInfo(name) {
 			this.currentNation = this.nationInfo[name];
-			this.$refs.info.scrollTop = 0;
+			if(this.$refs.info) this.$refs.info.scrollTop = 0;
 		},
 		clearNationInfo() {
 			this.currentNation = false;
